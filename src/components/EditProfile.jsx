@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import UserCard from "./UserCard";
-import api from "../utils/axiosInstance";
+import api from "../utils/apiInstance";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { addUser } from "../store/userSlice";
