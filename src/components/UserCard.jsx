@@ -26,6 +26,7 @@ const UserCard = () => {
         autoClose: 3000,
       });
     } catch (error) {
+      dispatch(removeUserFromFeed(id));
       toast.error(
         error?.response?.data?.message || "Action failed",
         {
