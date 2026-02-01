@@ -8,8 +8,8 @@ import { toast } from "react-toastify";
 const Login = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [emailId, setEmailId] = useState("rahul@gmail.com");
-  const [password, setPassword] = useState("Rahul@123");
+  const [emailId, setEmailId] = useState("basha@gmail.com");
+  const [password, setPassword] = useState("Basha@1234");
   const [isLogin, setIsLogin] = useState(true);
 
   const dispatch = useDispatch();
