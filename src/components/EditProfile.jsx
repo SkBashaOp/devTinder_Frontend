@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import UserCard from "./UserCard";
-import axios from "axios";
+import api from "../utils/axiosInstance";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { addUser } from "../store/userSlice";
@@ -25,7 +25,7 @@ const EditProfile = ({ user }) => {
       .filter(Boolean);
 
     try {
-      const res = await axios.patch(
+      const res = await api.patch(
         "/api/profile/edit",
         {
           photoUrl,
