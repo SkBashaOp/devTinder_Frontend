@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../utils/apiInstance";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { removeUserFromFeed } from "../store/feedSlice";
@@ -9,7 +9,7 @@ const UserCard = ({ feed }) => {
 
   const handlePendingRequest = async (status, id) => {
     try {
-      await axios.post(
+      await api.post(
         `/api/request/send/${status}/${id}`,
         {},
         { withCredentials: true }
