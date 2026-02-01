@@ -1,4 +1,4 @@
-import api from "../utils/apiInstance";
+import axios from "axios";
 import React from "react";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      const res = await api.post(
+      const res = await axios.post(
         "/api/logout",
         {},
         { withCredentials: true }
