@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../store/userSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+axios.defaults.baseURL = "";
 
 const Login = () => {
   const [firstName, setFirstName] = useState("");
