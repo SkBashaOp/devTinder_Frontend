@@ -94,3 +94,17 @@ const UserCard = ({ feed }) => {
               <button
                 className="btn btn-primary"
                 onClick={() =>
+                  handlePendingRequest("interested", _id)
+                }
+              >
+                Interested
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default UserCard;
