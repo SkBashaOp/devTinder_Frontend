@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../utils/apiInstance";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addFeed } from "../store/feedSlice";
@@ -13,7 +13,7 @@ const Feed = () => {
     if (feed) return;
 
     try {
-      const res = await axios.get(
+      const res = await api.get(
         "/api/user/feed",
         { withCredentials: true }
       );
