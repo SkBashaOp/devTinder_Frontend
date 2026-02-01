@@ -1,16 +1,15 @@
-import api from "../utils/apiInstance";
+import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addUser } from "../store/userSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-
 const Login = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [emailId, setEmailId] = useState("basha@gmail.com");
-  const [password, setPassword] = useState("Basha@1234");
+  const [emailId, setEmailId] = useState("rahul@gmail.com");
+  const [password, setPassword] = useState("Rahul@123");
   const [isLogin, setIsLogin] = useState(true);
 
   const dispatch = useDispatch();
@@ -18,7 +17,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await api.post(
+      const res = await axios.post(
         "/api/login",
         { emailId, password },
         { withCredentials: true }
@@ -43,7 +42,7 @@ const Login = () => {
 
   const handleSignup = async () => {
     try {
-      const res = await api.post(
+      const res = await axios.post(
         "/api/signup",
         { firstName, lastName, emailId, password },
         { withCredentials: true }
