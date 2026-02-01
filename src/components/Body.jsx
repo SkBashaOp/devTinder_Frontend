@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import { useDispatch, useSelector } from "react-redux";
-import api from "../utils/apiInstance";
+import axios from "axios";
 import { addUser } from "../store/userSlice";
 
 const Body = () => {
@@ -18,7 +18,7 @@ const Body = () => {
     if (userData) return;
 
     try {
-      const res = await api.get(
+      const res = await axios.get(
         "/api/profile/view",
         { withCredentials: true }
       );
