@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../utils/apiInstance";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addConnection } from "../store/connectionSlice";
@@ -10,7 +10,7 @@ const Connections = () => {
 
   const fetchConnections = async () => {
     try {
-      const res = await axios.get(
+      const res = await api.get(
         "/api/user/request/accepted",
         { withCredentials: true }
       );
