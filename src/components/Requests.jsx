@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../utils/apiInstance";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addRequest, removRequestOnAccept } from "../store/requestSlice";
@@ -10,7 +10,7 @@ const Requests = () => {
 
   const fetchRequests = async () => {
     try {
-      const res = await axios.get(
+      const res = await api.get(
         "/api/user/request/received",
         { withCredentials: true }
       );
@@ -23,7 +23,7 @@ const Requests = () => {
 
   const handleAcceptRequest = async (status, id) => {
     try {
-      await axios.post(
+      await api.post(
         `/api/request/review/${status}/${id}`,
         {},
         { withCredentials: true }
