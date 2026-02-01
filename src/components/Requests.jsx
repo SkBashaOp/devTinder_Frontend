@@ -64,4 +64,42 @@ const Requests = () => {
               <img
                 src={request.fromUserId.photoUrl}
                 alt="User"
-                className="max-lg:w-[12vw] max-lg:h-[12vw] w-[4vw] h-
+                className="max-lg:w-[12vw] max-lg:h-[12vw] w-[4vw] h-[4vw] rounded-full"
+              />
+            </figure>
+
+            <div className="card-body">
+              <h2 className="card-title">
+                {request.fromUserId.firstName}{" "}
+                {request.fromUserId.lastName}
+              </h2>
+
+              <p>
+                {request.fromUserId.age} {request.fromUserId.gender}
+              </p>
+
+              <p>{request.fromUserId.about}</p>
+
+              <div className="card-actions justify-start">
+                <button className="bg-gray-500 text-white px-[1vw] py-[.8vh] rounded-md">
+                  Reject
+                </button>
+
+                <button
+                  className="bg-gray-500 text-white px-[1vw] py-[.8vh] rounded-md"
+                  onClick={() =>
+                    handleAcceptRequest("accepted", request._id)
+                  }
+                >
+                  Accept
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Requests;
