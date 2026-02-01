@@ -18,7 +18,6 @@ const UserCard = () => {
         { withCredentials: true }
       );
 
-      // 🔥 THIS WILL NOW WORK
       dispatch(removeUserFromFeed(id));
 
       toast.success(status, {
@@ -26,7 +25,6 @@ const UserCard = () => {
         autoClose: 3000,
       });
     } catch (error) {
-      dispatch(removeUserFromFeed(id));
       toast.error(
         error?.response?.data?.message || "Action failed",
         {
